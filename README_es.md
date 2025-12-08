@@ -42,3 +42,30 @@ Compila todos tus archivos fuente junto con el *main* de prueba que desees ejecu
 ```bash
 cc (todos los archivos que necesites).c main_que_quieras_usar.c -o test_runner
 ```
+---
+
+### 3. Ejecución de la Suite
+
+Después de compilar, ejecuta el programa de tests generado:
+
+```bash
+./test_runner test_file1 test_file2 test_file3
+```
+**⚠️ Sustituye** `test_file1` `test_file2` `test_file3` por el nombre de los archivos de prueba que desees ejecutar (ej: `2_long_lines` `nothing` `no_new_line`).
+
+---
+
+## 🤝 Contribuciones (Reporting Issues)
+
+¡Las contribuciones son bienvenidas y son cruciales para mejorar la calidad de esta suite de tests!
+
+Si encuentras cualquier problema, por favor, **abre un *issue*** en este repositorio.
+
+---
+
+### ¿Cómo contribuir?
+
+1.  **Reportar un Issue:** Abre una nueva pestaña de *Issues* en GitHub y describe el error encontrado, incluyendo el **caso de prueba exacto** que está fallando o que falta.
+2.  **Enviar un Pull Request (Opcional):** Si has creado un nuevo test para solucionar el problema, puedes enviar directamente un *Pull Request* para que lo revisemos e integremos.
+
+**Tu colaboración asegura que esta suite de tests sea lo más robusta y completa posible para toda la comunidad.**
