@@ -34,19 +34,37 @@ Critical situations are evaluated to ensure robustness:
 
 ### 1. Requirements
 
-Ensure your `get_next_line` function and any necessary helper functions are compiled into a static library named **`libgnl.a`** (or similar, depending on your structure). Its prototype must be available in a header file named **`get_next_line.h`**. Both files must be located in the **root directory** of this test repository.
+Ensure your `get_next_line` function and any necessary helper functions are compiled. Its prototype must be available in a header file named **`get_next_line.h`**. Both files must be located in the **root directory** of this test repository.
 
-> **Note:** The exact names (`libgnl.a`, `get_next_line.h`) should match the names your `Makefile` or project structure uses.
-
-### 2. Compilation and Linking
-
-#### 2.1. Library Preparation
-
-Make sure you have previously run the `make` command in your `get_next_line` repository to generate the **`libgnl.a`** file.
-
-#### 2.2. Linking the Tests
-
-Once `libgnl.a` is ready, you can compile the test file and **link** it with your library using the following command:
+### 2. Compilation
 
 ```bash
-cc test_file_name.c -L. -lgnl -o test_runner
+cc (all the files you need).c main_you_want_to_use.c -o test_runner
+```
+**⚠️ Replace** `main_you_want_to_use.c` with the name of the main you want to execute (e.g., `mainbonus.c`).
+
+Note: There's a short explanaition in each main that explains its implementation
+
+---
+### 3. Execution
+
+After compiling and linking, execute the genereted test program:
+
+```bash
+./test_runner test_file1 test_file2 test_file3
+```
+**⚠️ Replace** `test_file1` `test_file2` `test_file3` with the name of the files you want to execute (e.g., `2_long_lines` `nothing` `no_new_line`).
+
+---
+## 🤝 Contributions (Reporting Issues)
+
+Contributions are highly welcome and are crucial for improving the quality of this test suite!
+If you encounter any issue, please **open an issue** in this repository.
+
+---
+### How to Contribute
+
+1.  **Report an Issue:** Open a new *Issues* tab on GitHub and describe the error you found, including the **exact test case** that is failing or missing.
+2.  **Submit a Pull Request (Optional):** If you have created a new test to fix the problem, you can directly submit a *Pull Request* for us to review and integrate.
+
+**Your collaboration ensures that this test suite is as robust and complete as possible for the entire community.**
