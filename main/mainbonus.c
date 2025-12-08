@@ -6,9 +6,28 @@
 /*   By: yaqliu <yaqliu@student.42barcelona.co      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/07 18:29:02 by yaqliu            #+#    #+#             */
-/*   Updated: 2025/12/07 19:04:45 by yaqliu           ###   ########.fr       */
+/*   Updated: 2025/12/08 12:58:58 by yaqliu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/*
+The purpose of this main is to make sure that your ft_get_next_line_bonus is working
+properly
+
+Instructions:
+1. Compile the necessary files with mainbonus.c
+2. Run your program with the files you select.
+   (This main accepts various files as arguments. Your function should read
+    simultaneously from all the files and display the lines interspersed; the output
+    will be in different colors.)
+
+    NOTE: if you wish to test your function with a non-existent fd, you can simply
+          enter the name of a non-existent file as an argument.
+
+To ensure that you do not have any memory leaks, you can use Valgrind when
+running your program:
+valgrind --leak-check=full
+*/
 
 #include "get_next_line_bonus.h"
 #include <stdio.h>
