@@ -48,7 +48,7 @@ Note: There's a short explanaition in each main that explains its implementation
 ---
 ### 3. Execution
 
-After compiling and linking, execute the genereted test program:
+After compiling, execute the genereted test program:
 
 ```bash
 ./test_runner test_file1 test_file2 test_file3
