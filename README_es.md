@@ -1,4 +1,4 @@
-# 🧪 Tester para get_next_line
+# 🧪 get_next_line Tester
 
 ---
 Este es un **conjunto de pruebas robusto y en constante crecimiento** diseñado para verificar la precisión, la gestión de memoria y el comportamiento de tu implementación de la función `get_next_line` para la lectura de líneas desde un descriptor de archivo.
