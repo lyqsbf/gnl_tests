@@ -16,7 +16,7 @@ The following scenarios are exhaustively tested:
 
 * **Standard Files:** Reading from regular text files.
 * **Variable Line Lengths:** Files containing short, long, and extremely long lines.
-* **Buffer Size ($BUFFER\_SIZE$):** Testing with different $BUFFER\_SIZE$ values (small, large, 1, and the file size itself).
+* **Buffer Size:** Testing with different BUFFER_SIZE values (small, large, 1, and the file size itself).
 * **Multiple File Descriptors:** Simultaneous reading from several open file descriptors.
 * **Line Endings:** Correctly handling lines ending with `\n`, lines without `\n`, and an empty file.
 
@@ -39,11 +39,19 @@ Ensure your `get_next_line` function and any necessary helper functions are comp
 ### 2. Compilation
 
 ```bash
-cc (all the files you need).c main_you_want_to_use.c -o test_runner
+cc -Wall -Wextra -Werror (all the files you need).c main_you_want_to_use.c -o test_runner
 ```
+In case that you want to change the BUFFER_SIZE you need to compile with the following rule:
+
+```bash
+cc -Wall -Wextra -Werror -D BUFFER_SIZE=`number` (all the files you need).c main_you_want_to_use.c -o test_runner
+```
+
 **⚠️ Replace** `main_you_want_to_use.c` with the name of the main you want to execute (e.g., `mainbonus.c`).
+**⚠️ Replace** `number` with the value of the BUFFER_SIZE you want to assign (e.g., `42`).
 
 Note: There's a short explanaition in each main that explains its implementation
+Note: If you try to assing BUFFER_SIZE a negative value it should still compile, but in that case your function should return `NULL`.
 
 ---
 ### 3. Execution
