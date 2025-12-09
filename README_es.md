@@ -15,7 +15,7 @@ Los siguientes escenarios se prueban exhaustivamente:
 
 * **Archivos Estándar:** Lectura de archivos de texto comunes.
 * **Longitudes de Línea Variables:** Archivos que contienen líneas cortas, largas y extremadamente largas.
-* **Tamaño del Buffer ($BUFFER\_SIZE$):** Pruebas con diferentes valores de $BUFFER\_SIZE$ (pequeño, grande, 1, y el tamaño del archivo).
+* **Tamaño del Buffer:** Pruebas con diferentes valores de BUFFER_SIZE (pequeño, grande, 1, y el tamaño del archivo).
 * **Múltiples Descriptores de Archivo:** Lectura simultánea de varios descriptores de archivo abiertos.
 * **Finales de Línea:** Manejo correcto de líneas que terminan con `\n`, líneas sin `\n` y archivos vacíos.
 
@@ -40,8 +40,19 @@ Asegúrate de que tu función `get_next_line` y cualquier función auxiliar nece
 Compila todos tus archivos fuente junto con el *main* de prueba que desees ejecutar:
 
 ```bash
-cc (todos los archivos que necesites).c main_que_quieras_usar.c -o test_runner
+cc -Wall -Wextra -Werror (todos los archivos que necesites).c main_que_quieras_usar.c -o test_runner
 ```
+En caso de querer modificar el valor de BUFFER_SIZE se puede hacer incluyendo la siguiente regla al compilar:
+
+```bash
+cc -Wall -Wextra -Werror -D BUFFER_SIZE=`numero` (todos los archivos que necesites).c main_que_quieras_usar.c -o test_runner
+```
+**⚠️ Sustituye** `main_que_quieras_usar` por el nombre del main que desees ejecutar (ej: `mainbonus.c`).
+**⚠️ Sustituye** `numero` por el valor de BUFFER_SIZE que quieres asignar (ej: `42`).
+
+Nota: Los main*.c incluyen una breve explicación sobre su implementación
+Nota: Si intentas asignarle a BUFFER_SIZE un valor negativo debería compilar igualmente, lo único que en este caso tu función deberia devolver `NULL`.
+
 ---
 
 ### 3. Ejecución de la Suite
@@ -50,6 +61,17 @@ Después de compilar, ejecuta el programa de tests generado:
 
 ```bash
 ./test_runner test_file1 test_file2 test_file3
+```
+**⚠️ Sustituye** `test_file1` `test_file2` `test_file3` por el nombre de los archivos de prueba que desees ejecutar (ej: `2_long_lines` `nothing` `no_new_line`).
+
+---
+
+### 4. Fugas de memoria (memory leaks)
+
+Para detectar si se produce alguna fuga de memoria durante la ejecución del programa podemos añadir el siguiente comando:
+
+```bash
+vlagrind --leak-check=full ./test_runner test_file1 test_file2 test_file3
 ```
 **⚠️ Sustituye** `test_file1` `test_file2` `test_file3` por el nombre de los archivos de prueba que desees ejecutar (ej: `2_long_lines` `nothing` `no_new_line`).
 
