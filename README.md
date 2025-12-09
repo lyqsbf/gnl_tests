@@ -64,6 +64,16 @@ After compiling, execute the genereted test program:
 **⚠️ Replace** `test_file1` `test_file2` `test_file3` with the name of the files you want to execute (e.g., `2_long_lines` `nothing` `no_new_line`).
 
 ---
+### 4. Memory leaks
+
+If you want to check if any memory leak is generated during the execution of your program, you can use the following command:
+
+```bash
+valgrind --leak-check=full ./test_runner test_file1 test_file2 test_file3
+```
+**⚠️ Replace** `test_file1` `test_file2` `test_file3` with the name of the files you want to execute (e.g., `2_long_lines` `nothing` `no_new_line`).
+
+---
 ## 🤝 Contributions (Reporting Issues)
 
 Contributions are highly welcome and are crucial for improving the quality of this test suite!
