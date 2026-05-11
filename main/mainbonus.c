@@ -31,6 +31,7 @@ valgrind --leak-check=full
 
 #include "get_next_line_bonus.h"
 #include <stdio.h>
+#include <fcntl.h>
 
 //definition of colours
 #define RESET   "\033[0m"
