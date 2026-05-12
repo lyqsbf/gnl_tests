@@ -22,7 +22,7 @@ Instructions:
 #include "get_next_line.h"
 #include <stdio.h>
 // #include <fcntl.h>
-// fcntl.h is not included as it is expected to be in get_next_line.h 
+// fcntl.h needed if not included in get_next_line.h 
 
 int main(void)
 {
